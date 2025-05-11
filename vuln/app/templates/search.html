@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+  <h1>Search Users</h1>
+  <form method="POST">
+    Username: <input name="username"><br>
+    <input type="submit">
+  </form>
+
+  {% if users %}
+    <h2>Results for "{{ username }}":</h2>
+    <ul>
+      {% for user in users %}
+        <li>{{ user['username'] }} - {{ user['email'] }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
